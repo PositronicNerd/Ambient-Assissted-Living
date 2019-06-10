@@ -4,7 +4,7 @@
 
 ## What is ALOB?
 
-ALOB is a solution inspired by the [AAL programme](http://www.aal-europe.eu/about/) to provide medical solutions to your relatives and loved ones while they stay at home safe while you live your own life. At the same time, it can be used by specialists to make diagnosis from their offices and receive them inmediately via chat. 
+ALOB is a solution inspired by the [AAL programme](http://www.aal-europe.eu/about/) to provide medical solutions to your relatives and loved ones while they stay at home completely comfortable. At the same time, it can be used by specialists to make diagnosis from their offices and receive them inmediately via chat. 
 
 
 
