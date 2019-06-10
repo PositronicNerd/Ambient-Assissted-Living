@@ -24,6 +24,8 @@ ALOB is a solution inspired by the [AAL programme](http://www.aal-europe.eu/abou
 
 ## What services are we currently offering?: 
 
+### Sleep monitorizing: 
+Graphs the gathered sleep data on two graphs, where one will show you if your patient is still sleeping or not, and the other one if to know how deep that sleep cycle was.
 ### Presence-Detecting lights:
 In case the patient wakes up at night, the lights on the walls will turn on to prevent desorientation and possible accidents.
 ### Chat board: 
@@ -40,17 +42,22 @@ When the patient suffers a fall, an instant message will be sent you via WhatsAp
  *MySQL Server.
 
  *JavaFX.
+ 
+ *Python3.
 
- *Arduino for the sensors.
+ *Arduino.
+ 
+ *Raspberry Pi 3.
 
- *Python3 for data management.
+ 
 
  
  
 ## How it works:
 
+Our application has 3 main roles:
 
- Supervisor role (Medical expert):
+### Supervisor role (Medical expert):
 
   -Allows you to select a signed patient and get all his profile information, communicate with him/her and with their relative. 
 
