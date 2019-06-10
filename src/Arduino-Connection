@@ -1,0 +1,156 @@
+
+/********************************************************************************
+ * Autor:
+ *    Sergio Bemposa
+ *    
+ * Mas informacion Comados AT:
+ *    https://www.itead.cc/wiki/ESP8266_Serial_WIFI_Module
+ *    
+ * Cableado:
+ * ESP8266 orientado con la antena hacia la derecha y mirando por el lado de los componentes:
+ * El pin del ESP se conecta a:
+ *    RX del arduino          ||  GND
+ *    CH_PD Soft RST: 3.3v    ||  Not Connected
+ *    Not Connected           ||  Not Connected
+ *    VCC: 3.3v               ||  TX del arduino (divisor de tension)
+********************************************************************************/
+
+#include <SoftwareSerial.h>
+
+const String ssid       = "residencia";
+const String password   = "residencia123";
+
+const String server     = "192.168.10.159";
+const String port       = "9000";
+
+
+
+/********************************************************************************/
+/********************************************************************************/
+bool WaitOK(long, bool = true, bool = true);
+int  WaitAnswer(long, bool = true, bool = true);
+bool WaitGotIP(long, bool = true, bool = true);
+void sendComand(String, bool = true);
+
+#define rxPin 2
+#define txPin 3
+SoftwareSerial ESP(rxPin, txPin); // RX, TX
+
+/********************************************************************************/
+/********************************************************************************/
+void setup() {
+  Serial.begin(9600); // Connection to PC
+  pinMode(13, OUTPUT);
+  digitalWrite(13, LOW);
+  delay(200);
+  digitalWrite(13, HIGH);
+  ESP.begin(9600); // Connection to ESP8266
+  //ESP.begin(74880); // Connection to ESP8266
+
+  Serial.println("Iniciando..."); // Connection to PC
+  WaitGotIP(5000);
+  
+  sendComand("AT");
+  String cad;
+  cad = "AT+CWJAP=\"" + String(ssid) + "\",\"" + String(password) + "\"";
+  sendComand(cad);
+  sendComand("AT+CIFSR");
+  WaitOK(3000);
+  cad = "AT+CIPSTART=\"TCP\",\"" + server + "\"," + port;
+  sendComand(cad);
+  WaitOK(10000);
+  sendComand("AT+CIPSTATUS");
+  WaitOK(5000);
+}
+
+/********************************************************************************/
+void loop() {
+ String cmd = "  Ardui";
+  sendGet(cmd);
+  
+ 
+}
+
+/********************************************************************************/
+/********************************************************************************/
+void sendComand(String c, bool echo) {
+  ESP.flush();
+  ESP.println(c);
+  if(echo)Serial.println("*****************************************");
+  if(echo)Serial.println(c);
+  ESP.flush();
+}
+
+/********************************************************************************/
+/********************************************************************************/
+void sendGet(String cmd) {
+  String cad = "AT+CIPSEND=" + String(cmd.length() + 4);
+  sendComand(cad);
+  sendComand(cmd, true);
+  sendComand("");
+}
+
+/********************************************************************************/
+/********************************************************************************/
+void PrintResponse(long timeoutamount) {
+  unsigned long timeout = millis() + timeoutamount;
+  unsigned long timeStart = millis();
+  char c;
+  Serial.println("=========================================");
+  while (millis() <= timeout) {
+    if (ESP.available() > 0) {
+      c = ESP.read();
+      Serial.print(c);
+    }
+  }
+}
+
+/********************************************************************************/
+/********************************************************************************/
+bool WaitGotIP(long timeoutamount, bool echo, bool echoError) {
+  unsigned long timeout = millis() + timeoutamount;
+  unsigned long timeStart = millis();
+  char c[] = "        ";
+  if (echo)Serial.println("-----------------------------------------");
+  while (millis() <= timeout) {
+    while (ESP.available() > 0) {
+      c[5] = ESP.read();
+      if (echo) Serial.print(c[5]);
+      if (c[5] == 'P') {
+        if (c[0] == 'G' && c[1] == 'O' && c[2] == 'T' && c[3] == ' ' && c[4] == 'I') {
+          if (echo) Serial.println("\nGot IP: [" + String(millis() - timeStart) + "ms]");
+          while (ESP.available() > 0) ESP.read();
+          return true;
+        }
+      }
+      c[0] = c[1]; c[1] = c[2]; c[2] = c[3]; c[3] = c[4]; c[4] = c[5];
+    }
+  }
+  if (echoError)Serial.println("WaitGotIP False [" + String(millis() - timeStart) + "ms]");
+  return false;
+}
+
+/********************************************************************************/
+bool WaitOK(long timeoutamount, bool echo, bool echoError) {
+  static int codigo=0;
+  unsigned long timeout = millis() + timeoutamount;
+  unsigned long timeStart = millis();
+  char c0 = ' ', c1 = ' ';
+  codigo += 1;
+  if(echo)Serial.println("-----------------------------------------");
+  while (millis() <= timeout) {
+    while (ESP.available() > 0) {
+      c1 = ESP.read();
+      if(echo)Serial.print(c1);
+      if (c0 == 'O' && c1 == 'K') {
+        if(echo)Serial.println("\nWaitOK TRUE [" + String(millis() - timeStart) + "ms]");
+        delay(100);
+        while (ESP.available() > 0) ESP.read();
+        return true;
+      }
+      c0 = c1;
+    }
+  }
+  if(echoError)Serial.println("WaitOK False {Code:"+String(codigo)+"} [" + String(millis() - timeStart) + "ms]");
+  return false;
+}

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../principal/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="paginaPrincipalPaciente.ControladorPrincipalUsuario">
+   <children>
+      <GridPane layoutX="200.0" layoutY="164.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <AnchorPane fx:id="patientwindowleftgrid" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <GridPane layoutX="50.0" layoutY="162.0" styleClass="mainpannel" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <ImageView fx:id="imagendormir" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <image>
+                              <Image url="@../Multimedia/sleep.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="imagenluz" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                           <image>
+                              <Image url="@../Multimedia/lighton.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </GridPane>
+               </children>
+               <GridPane.margin>
+                  <Insets right="5.0" />
+               </GridPane.margin>
+            </AnchorPane>
+            <TabPane fx:id="tabpanelpatient" prefHeight="200.0" prefWidth="200.0" styleClass="mainpannel" tabClosingPolicy="UNAVAILABLE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+              <tabs>
+                <Tab fx:id="TabFamiliar" closable="false" text="Familiar">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <BorderPane layoutX="50.0" layoutY="84.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+								   <bottom>
+								      <AnchorPane prefHeight="70.0" prefWidth="265.0" BorderPane.alignment="CENTER">
+								         <children>
+								            <TextField fx:id="TextMensajeFamiliar" layoutY="3.0" prefHeight="45.0" prefWidth="157.0" style="-fx-background-radius: 10; -fx-background-color: #448AFF; -fx-text-inner-color: #FFFFFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="108.0" AnchorPane.topAnchor="0.0">
+                                             <effect>
+                                                <InnerShadow blurType="GAUSSIAN" color="#1c1515b2" height="20.0" radius="9.5" width="20.0" />
+                                             </effect>
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font></TextField>
+                                          <Button fx:id="BotonMensajeFamiliar" layoutX="169.0" layoutY="7.0" mnemonicParsing="false" onAction="#sendMessageRelative" prefHeight="65.0" prefWidth="91.0" style="-fx-background-radius: 10; -fx-background-color: #448AFF;" AnchorPane.bottomAnchor="3.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0">
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                             <effect>
+                                                <DropShadow blurType="GAUSSIAN" color="#1c151573" height="20.0" radius="9.5" width="20.0" />
+                                             </effect>
+                                          </Button>
+								         </children>
+                                       <padding>
+                                          <Insets top="5.0" />
+                                       </padding>
+								      </AnchorPane>
+								   </bottom>
+                                 <center>
+                                    <TextArea fx:id="TextAreaFamiliar" editable="false" prefHeight="252.0" prefWidth="265.0" BorderPane.alignment="CENTER">
+                                       <effect>
+                                          <InnerShadow blurType="GAUSSIAN" color="#1c1515b2" height="20.0" radius="9.5" width="20.0" />
+                                       </effect>
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </TextArea>
+                                 </center>
+                              </BorderPane>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab fx:id="TabSupervisor" text="Supervisor">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <BorderPane layoutX="50.0" layoutY="84.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <center>
+                                    <AnchorPane prefHeight="70.0" prefWidth="265.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <TextArea fx:id="TextAreaSupervisor" editable="false" layoutX="33.0" layoutY="41.0" prefHeight="255.0" prefWidth="265.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <effect>
+                                                <InnerShadow color="#1c1515b2" height="20.0" radius="9.5" width="20.0" />
+                                             </effect>
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font></TextArea>
+                                       </children>
+                                    </AnchorPane>
+                                 </center>
+                                 <bottom>
+                                    <AnchorPane prefHeight="70.0" prefWidth="265.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <TextField fx:id="TextMensajeSupervisor" layoutY="-1.0" prefHeight="73.0" prefWidth="157.0" style="-fx-background-radius: 10; -fx-background-color: #448AFF; -fx-text-inner-color: #FFFFFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="108.0" AnchorPane.topAnchor="0.0">
+                                             <effect>
+                                                <InnerShadow blurType="GAUSSIAN" color="#1c1515b2" height="20.0" radius="9.5" width="20.0" />
+                                             </effect>
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </TextField>
+                                          <Button fx:id="BotonMensajeSupervisor" layoutX="171.0" layoutY="7.0" mnemonicParsing="false" onAction="#sendMessageSupervisor" prefHeight="66.0" prefWidth="91.0" style="-fx-background-radius: 10; -fx-background-color: #448AFF;" AnchorPane.bottomAnchor="2.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="2.0">
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                             <effect>
+                                                <DropShadow blurType="GAUSSIAN" color="#1c151573" height="20.0" radius="9.5" width="20.0" />
+                                             </effect>
+                                          </Button>
+                                       </children>
+                                       <BorderPane.margin>
+                                          <Insets />
+                                       </BorderPane.margin>
+                                       <padding>
+                                          <Insets top="5.0" />
+                                       </padding>
+                                    </AnchorPane>
+                                 </bottom>
+                              </BorderPane>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                </Tab>
+              </tabs>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin>
+            </TabPane>
+         </children>
+      </GridPane>
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</AnchorPane>
