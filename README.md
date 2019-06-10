@@ -1,8 +1,12 @@
 # Assissted Living Out of Bounds (ALOB)
 
+
+
 ## What is ALOB?
 
 ALOB is a solution inspired by the [AAL programme](http://www.aal-europe.eu/about/) to provide medical solutions to your relatives and loved ones while they stay at home safe while you live your own life. At the same time, it can be used by specialists to make diagnosis from their offices and receive them inmediately via chat. 
+
+
 
 ## What makes it so amazing?: 
 
@@ -16,6 +20,8 @@ ALOB is a solution inspired by the [AAL programme](http://www.aal-europe.eu/abou
 
 *Fully translated to 5 languages (Finnish, English, Spanish, German, Japanese).
 
+
+
 ## What services are we currently offering?: 
 
 ### Presence-Detecting lights:
@@ -27,9 +33,7 @@ Allows you and the medical expert to create a pill plan for the whole week. The 
 ### Fall detector:
 When the patient suffers a fall, an instant message will be sent you via WhatsApp with the exact date and time (Possible 		inclussion of medical services response)
 
--Perks:
 
- -Easy-To-Use application (Calmed colors, Intutive icons and Google's Material Design UI design).
 
 ## Technologies Involved:
 
@@ -42,10 +46,11 @@ When the patient suffers a fall, an instant message will be sent you via WhatsAp
  *Python3 for data management.
 
  
+ 
 ## How it works:
 
 
- -Supervisor role (Medical expert):
+ Supervisor role (Medical expert):
 
   -Allows you to select a signed patient and get all his profile information, communicate with him/her and with their relative. 
 
