@@ -57,27 +57,29 @@ When the patient suffers a fall, an instant message will be sent you via WhatsAp
 
 Our application has 3 main roles:
 
+### Relative role (You):
+
+  *Allows you to select a signed patient and get all his profile information, communicate with him/her and with their  relative. 
+
+  *Access to the sleep data graphs.
+
+  *Pill box access.
+
+  *Falling log access.
+  
+  *24/7 Chat with the medical expert and the patient.
+
 ### Supervisor role (Medical expert):
 
-  -Allows you to select a signed patient and get all his profile information, communicate with him/her and with their relative. 
+  *You have the same access to the information and services the medical exert does.
 
-  -Access to the sleep data graphs.
+### Patient role (Your relative or close one):
 
-  -Pill box access.
+  *Simplified information about how is sleeping (Green/Yellow/Red icon).
 
-  -Falling log access.
+  *Icon represents if wall lights are ON or not.
 
- -Relative role (You):
-
-  -You have the same access to the information and services the medical exert does.
-
- -Patient role (Your relative or close one):
-
-  -Simplified information about how is sleeping (Green/Yellow/Red icon).
-
-  -Icon represents if wall lights are ON or not.
-
-  -Communication with you and the medical expert.
+  *Communication with you and the medical expert.
 
 
  
