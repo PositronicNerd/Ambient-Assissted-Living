@@ -1,43 +1,48 @@
 # Assissted Living Out of Bounds (ALOB)
 
-## Description: 
+## What is ALOB?
 
--Collects and analyzes sleep data of the patient.
+ALOB is a solution inspired by the [AAL programme](http://www.aal-europe.eu/about/) to provide medical solutions to your relatives and loved ones while they stay at home safe while you live your own life. At the same time, it can be used by specialists to make diagnosis from their offices and receive them inmediately via chat. 
 
--No need of a hospital, can be used at patient's home.
+## What makes it so amazing?: 
 
--Easy to install.
+*Allows to you get the data from the medical sensors and then monitorize it whenever and wherever you want.
 
--You and a medical expert can watch that data 24/7 online.
+*No need for exhausting and expensive stays in a hospital. ALOB allows you to stay at home to get the results.
 
--Includes more services such as:
+*Your doctor will be able to get the same data and share opinion with you about it from home.
 
- -Presence-Detecting lights. In case the patient wakes up at night, the lights on the walls will turn on to prevent desorientation and     	  accidents.
- -Chat board: Communication between the patient, the medical expert and you.
- 
- -Pill box: Allows you and the medical expert to create a pill plan for the whole week. The patient receives a notification everytime a pill   		has to be consumed.
- 
- -Fall detector: When the patient suffers a fall, an instant message will be sent you via WhatsApp with the exact date and time (Possible 		inclussion of medical services response)
+*Easy to use and easy to install. You will only need an internet connection and a computer.
 
- All these services are able to be shutdown in case of malfunction or not being requested.
+*Fully translated to 5 languages (Finnish, English, Spanish, German, Japanese).
+
+## What services are we currently offering?: 
+
+### Presence-Detecting lights:
+In case the patient wakes up at night, the lights on the walls will turn on to prevent desorientation and possible accidents.
+### Chat board: 
+Communication between the patient, the medical expert and you. 
+### Pill box: 
+Allows you and the medical expert to create a pill plan for the whole week. The patient receives a notification everytime a pill	has to be consumed.
+### Fall detector:
+When the patient suffers a fall, an instant message will be sent you via WhatsApp with the exact date and time (Possible 		inclussion of medical services response)
+
 -Perks:
 
  -Easy-To-Use application (Calmed colors, Intutive icons and Google's Material Design UI design).
 
- -Fully translated to 5 languages (Finnish, English, Spanish, German, Japanese).
+## Technologies Involved:
 
--Technologies Involved:
+ *MySQL Server.
 
- -MySQL Server.
+ *JavaFX.
 
- -JavaFX.
+ *Arduino for the sensors.
 
- -Arduino for the sensors.
-
- -Python3 for data management.
+ *Python3 for data management.
 
  
- How it works:
+## How it works:
 
 
  -Supervisor role (Medical expert):
