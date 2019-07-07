@@ -1,4 +1,4 @@
-# Assissted Living Out of Bounds (ALOB)
+# Assisted Living Out of Bounds (ALOB)
 
 
 
